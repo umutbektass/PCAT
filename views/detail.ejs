@@ -1,0 +1,44 @@
+<%- include ('partials/_header')-%>
+<body>
+	<div class="tm-page-wrap mx-auto">
+		<div class="position-relative">
+			<div class="potition-absolute tm-site-header">
+				<%- include ('partials/_navbar')-%>
+			</div>
+			<div class="tm-welcome-container tm-fixed-header tm-fixed-header-2">
+				<div class="text-center">
+					<p class="pt-5 px-3 tm-welcome-text tm-welcome-text-2 mb-1 mt-lg-0 mt-5 text-white mx-auto">Another Image BG<br>it can be fixed.<br>Content will simply slide over.</p>                	
+				</div>                
+            </div>
+
+            <div id="tm-fixed-header-bg"></div> <!-- Header image -->
+		</div>
+
+			<div class="mx-auto pb-3 tm-about-text-container px-3">
+			<div class=" row mt-5">
+				<div>
+					<img src="<%= photoDetail.image %>" alt="Image" class="img-fluid tm-catalog-item-img">   
+				</div>
+				<div class= "col-md-8">
+					<h1 class="mb-4 mt-3"><%= photoDetail.title %></h1>
+				<p><%= photoDetail.description
+					%></p>
+			</div>
+				<div class="col-6 col-md-4 p-4 ">
+					<a href="/photos/edit/<%= photoDetail._id %>" class="btn btn-primary rounded-0 d-block ml-auto mr-0 tm-btn-animate tm-btn-submit tm-icon-submit mb-5 px-5 py-2 w-100"><span>Update Photo</span></a>
+					<a href="/photo/<%= photoDetail._id %>?_method=DELETE" class="btn btn-danger rounded-0 d-block ml-auto mr-0 tm-btn-animate tm-btn-submit tm-icon-submit mt-3 px-5 py-2 w-100" onclick="return confirm('Silmek istediğinize emin misiniz ? ')"><span>Delete Photo</span></a>
+					
+					
+				</div>
+			
+			</div>
+		</div>
+		</main>
+
+		<div class="container-fluid tm-content-container mx-auto pt-5">
+            <%- include ('partials/_footer')-%>
+	<script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/parallax.min.js"></script>
+</body>
+</html>
